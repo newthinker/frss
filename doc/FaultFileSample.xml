@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<fault>
+		<equipType>a1</equipType>
+		<equipName>炮筒</equipName>
+		<equipNumber>001</equipNumber>
+		<amount>5</amount>
+		<faultDesp>nothing</faultDesp>
+		<faultTime>2012-04-10</faultTime>
+		<preProcess>no</preProcess>
+		<frequence>3</frequence>
+		<faultPlace>no</faultPlace>
+		<department>团1</department>
+		<operater>sb1</operater>
+		<reporter>sb2</reporter>
+		<contact>asdasdlf</contact>
+		<reportTime></reportTime>
+		<photos></photos>
+	</fault>
+	<fault>
+		<equipType>a2</equipType>
+		<equipName>xxx</equipName>
+		<equipNumber>002</equipNumber>
+		<amount>3</amount>
+		<faultDesp>nothing</faultDesp>
+		<faultTime>2012-04-11</faultTime>
+		<preProcess>no</preProcess>
+		<frequence>1</frequence>
+		<faultPlace>no</faultPlace>
+		<department>团2</department>
+		<operater>sb1</operater>
+		<reporter>sb2</reporter>
+		<contact>asdasdlf</contact>
+		<reportTime></reportTime>
+		<photos></photos>
+	</fault>
+</root>

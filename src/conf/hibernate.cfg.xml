@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="frss">
+	<!-- *************************************************** -->  
+	<!--                   JDBC config                       -->  
+	<!-- *************************************************** -->  
+	 <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+	 <property name="hibernate.connection.password">admin</property>
+	 <property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:orcl</property>
+	 <property name="hibernate.connection.username">FRSS</property>
+	 <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>	 
+	 <property name="connection.autocommit">true</property>
+	 <property name="connection.SetBigStringTryClob">true</property>
+
+	<!-- *************************************************** -->  
+	<!--                   C3P0 Pool config                  -->  
+	<!-- *************************************************** -->  	 
+	<property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+	<!-- 最小/大连接数 -->
+	<property name="hibernate.c3p0.min_size">10</property>
+	<property name="hibernate.c3p0.max_size">30</property>
+	<property name="hibernate.c3p0.timeout">120</property>
+	<property name="hibernate.c3p0.max_statements">100</property>
+	<property name="hibernate.c3p0.idle_test_period">100</property>
+	<property name="hibernate.c3p0.acquire_increment">2</property>
+	<!-- 每次都验证连接是否可用 -->
+	<property name="hibernate.c3p0.validate">true</property>   
+	<!--是否将运行期生成的SQL输出到日志以供调试-->
+	<property name="show_sql">false</property>
+	<property name="format_sql">false</property>
+	
+	<mapping resource="conf/hbm/FrssApprovalInfo.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssAudioInfo.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssBackupApp.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssEquipmentInfo.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssExpertInfo.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssFactoryInfo.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssFaultInfo.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssMachinistInfo.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssRemoteSupport.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssRepairDispatch.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssRepairFeedback.hbm.xml"/>		 
+	<mapping resource="conf/hbm/FrssUserInfo.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssEquipCreating.hbm.xml"/>
+	<mapping resource="conf/hbm/FrssClientReview.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

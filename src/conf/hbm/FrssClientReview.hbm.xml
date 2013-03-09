@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-1-5 23:46:06 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.frss.model.mapping.FrssClientReview" table="FRSS_CLIENT_REVIEW">
+        <id name="faultId" type="long">
+        	<column name="FAULTID" precision="20" scale="0" />
+            <generator class="assigned"></generator>
+        </id>       
+        <property name="client" type="java.lang.String">
+            <column name="CLIENT" length="32" not-null="true" />
+        </property>
+        <property name="quality" type="int">
+            <column name="QUALITY" precision="1" scale="0" not-null="true" />
+        </property>     
+        <property name="reviewWay" type="int">
+            <column name="REVIEWWAY" precision="1" scale="0" not-null="true" />
+        </property>  
+        <property name="contact" type="java.lang.String">
+            <column name="CONTACT" length="256" />
+        </property>   
+        <property name="discription" type="java.lang.String">
+            <column name="DISCRIPTION" length="256" />
+        </property>             
+	</class>
+</hibernate-mapping>

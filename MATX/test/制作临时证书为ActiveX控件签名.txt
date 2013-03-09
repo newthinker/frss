@@ -1,0 +1,17 @@
+      目前IE对ActiveX控件的限制已经相当严格，如果没有使用合法证书为自己的控件签名，那么无论你的控件功能多么强大，也将毫无用武之地。
+      签名证书是需要购买的，而且价格不菲，但我们在开发过程中很可能需要模拟一个安全环境来测试控件，按照普通方法使用makecert命令生成的证书，其根证书是不被信任的，用它来对控件签名，其结果仍然是被IE拦截，因此正确的方法应该是分两步走：先产生自认证证书放入可信任的根证书机构中，然后由此证书颁发子证书来对控件签名，具体方法如下：
+      1. 在Visual Studio命令行中输入：
+      makecert -n "CN=TempRoot" -r -sv TempRoot.pvk TempRoot.cer
+      得到一个自认证证书TempRoot.cert，其密钥文件为TempRoot.pvk
+      2. 在Visual Studio命令行中输入：
+      makecert -sk TempCA -iv TempRoot.pvk -n "CN=TempCA" -ic TempRoot.cer TempCA.cer -sr currentuser -ss My
+      得到一个由刚才TempRoot所颁发的子证书TempCA，且被保存到"个人"证书库中
+      3. 在Visual Studio命令行中输入：
+      certmgr
+      打开证书管理器，可看到"个人"里已经含有TempCA，点击标签页"可信任的根证书机构"，点击"导入"，将TempRoot.cert导入，这样一来TempCA的证书链就是完整且可信任的了
+      4. 在Visual Studio命令行中输入：
+      signtool signwizard
+      根据签名向导为控件加上TempCA的签名，将控件嵌入html文件，浏览该网页，将会正常显示控件的签名信息，并询问是否安装控件，完成！
+
+时间戳地址为: 
+http://timestamp.verisign.com/scripts/timstamp.dll

@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
+<!-- Active URL: file:///D:/Soft/Develop/wwwsqldesigner-2.6/index.html -->
+<sql>
+<datatypes db="oracle">
+	<group label="Number" color="rgb(238,238,170)">
+		<type label="NUMERIC" length="0" sql="DECIMAL" re="INT" quote=""/>
+		<type label="NUMBER" length="0" sql="DECIMAL" re="INT" quote=""/>
+		<type label="Decimal" length="1" sql="DECIMAL" re="DEC" quote=""/>
+		<type label="Single precision" length="0" sql="FLOAT" quote=""/>
+		<type label="Double precision" length="0" sql="DOUBLE" re="DOUBLE" quote=""/>
+	</group>
+
+	<group label="Character" color="rgb(255,200,200)">
+		<type label="Char" length="1" sql="CHAR" quote="'"/>
+		<type label="NCHAR" length="1" sql="NCHAR" quote="'"/>
+		<type label="Varchar2" length="1" sql="VARCHAR2" quote="'"/>
+		<type label="CLOB" length="0" sql="MEDIUMTEXT" re="TEXT" quote="'"/>
+		<type label="Binary" length="1" sql="BINARY" quote="'"/>
+		<type label="Varbinary" length="1" sql="VARBINARY" quote="'"/>
+		<type label="BLOB" length="0" sql="BLOB" re="BLOB" quote="'"/>
+	</group>
+
+	<group label="Date &amp; Time" color="rgb(200,255,200)">
+		<type label="Date" length="0" sql="DATE" quote="'"/>
+		<type label="Timestamp" length="0" sql="TIMESTAMP" quote="'"/>
+	</group>
+	
+	<group label="Miscellaneous" color="rgb(200,200,255)">
+		<type label="ENUM" length="1" sql="ENUM" quote=""/>
+		<type label="SET" length="1" sql="SET" quote=""/>
+	</group>
+</datatypes><table x="152" y="323" name="FRSS_EQUIPMENT_INFO">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>装备表单编号，用作主键</comment>
+</row>
+<row name="EQUIPTYPE" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>装备型号</comment>
+</row>
+<row name="EQUIPNUMBER" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>装备编号</comment>
+</row>
+<row name="EQUIPNAME" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>装备名称</comment>
+</row>
+<row name="CREATETIME" null="0" autoincrement="0">
+<datatype>DATE</datatype>
+<comment>装备生产时间</comment>
+</row>
+<row name="DESCRIPTION" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>装备描述信息</comment>
+</row>
+<row name="ID_FRSS_FACTORY_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<relation table="FRSS_FACTORY_INFO" row="ID" />
+<comment>工业部门的编号，主键，可以根据编号在装备信息表中查找已出厂装备型号</comment>
+</row>
+<row name="DEPARTMENT" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>装备使用单位</comment>
+</row>
+<row name="OPERATER" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>装备操作者</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<key type="INDEX" name="">
+</key>
+<comment>装备信息表，记录各类装备的基础信息。</comment>
+</table>
+<table x="644" y="291" name="FRSS_BACKUP_APP">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>装备备件申请单编号</comment>
+</row>
+<row name="ID_FRSS_EQUIPMENT_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<comment>装备表单编号，用作主键</comment>
+</row>
+<row name="EQUIPLACE" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>备件使用装备部位</comment>
+</row>
+<row name="BACKCOUNT" null="0" autoincrement="0">
+<datatype>DECIMAL(5)</datatype>
+<comment>备件数量</comment>
+</row>
+<row name="REPORTER" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>备件申请记录人</comment>
+</row>
+<row name="REPORTERCONTACT" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>备件申请记录人的联系方式</comment>
+</row>
+<row name="ID_FRSS_FAULT_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>装备备件申请表，记录需申请装备备件的相关信息。</comment>
+</table>
+<table x="812" y="553" name="FRSS_APPROVAL_INFO">
+<row name="ID" null="1" autoincrement="1">
+<datatype>DECIMAL</datatype>
+<default>NULL</default><comment>审核者编号，主键</comment>
+</row>
+<row name="CHECKER" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>审核者姓名，审核者也是各种申请表单的状态确认者。</comment>
+</row>
+<row name="OPINION" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>审核意见</comment>
+</row>
+<row name="CHECKTIME" null="0" autoincrement="0">
+<datatype>DATE</datatype>
+<comment>审核时间</comment>
+</row>
+<row name="TYPE" null="0" autoincrement="0">
+<datatype>DECIMAL(5)</datatype>
+<comment>审核类型，6类(1~6):故障维修上报审核(2级)、备件申请审核、远程支援表单确认、维修派遣表单确认、维修反馈表单确认</comment>
+</row>
+<row name="STATUS" null="0" autoincrement="0">
+<datatype>DECIMAL(1)</datatype>
+<comment>审核阶段，3(0～2):分别表示提交确认、通过、未通过；</comment>
+</row>
+<row name="ID_FRSS_USER_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<relation table="FRSS_USER_INFO" row="ID" />
+<comment>用户编号</comment>
+</row>
+<row name="KEYID" null="1" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<default>NULL</default><comment>被审核表单的ID主键号</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>记录审批者相关信息以及相关审批意见等</comment>
+</table>
+<table x="1146" y="698" name="FRSS_EXPERT_INFO">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>专家的编号</comment>
+</row>
+<row name="NAME" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>专家姓名</comment>
+</row>
+<row name="EMAIL" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>专家的EMAIL邮箱地址</comment>
+</row>
+<row name="CONTACT" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>专家的联系人</comment>
+</row>
+<row name="CONTACTWAY" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>联系人的联系方式</comment>
+</row>
+<row name="DEPARTMENT" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>专家所属单位</comment>
+</row>
+<row name="ID_FRSS_USER_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<relation table="FRSS_USER_INFO" row="ID" />
+<comment>用户编号</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>专家信息表，，记录远程协助的各位专家相关信息。</comment>
+</table>
+<table x="474" y="538" name="FRSS_FAULT_INFO">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>故障编号，也可以当作是故障维修申请单号</comment>
+</row>
+<row name="ID_FRSS_EQUIPMENT_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<comment>装备表单编号，用作主键</comment>
+</row>
+<row name="AMOUNT" null="0" autoincrement="0">
+<datatype>DECIMAL(5)</datatype>
+<comment>故障装备数量</comment>
+</row>
+<row name="FAULTDESP" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>装备故障描述信息</comment>
+</row>
+<row name="FAULTTIME" null="0" autoincrement="0">
+<datatype>DATE</datatype>
+<comment>故障发生时间</comment>
+</row>
+<row name="PREPROCESS" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>装备故障前期处理情况</comment>
+</row>
+<row name="FREQUENCY" null="1" autoincrement="0">
+<datatype>DECIMAL(5)</datatype>
+<default>NULL</default><comment>装备故障发生频次</comment>
+</row>
+<row name="FAULTPLACE" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>故障发生部位</comment>
+</row>
+<row name="REPORTER" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>故障记录者</comment>
+</row>
+<row name="REPORTERCONTACT" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>故障记录者的联系方式</comment>
+</row>
+<row name="REPORTIME" null="0" autoincrement="0">
+<datatype>DATE</datatype>
+<comment>报修时间</comment>
+</row>
+<row name="PHOTOS" null="1" autoincrement="0">
+<datatype>BLOB</datatype>
+<default>NULL</default><comment>取证照片</comment>
+</row>
+<row name="CAUSE" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>故障原因</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>装备故障信息表，记录所有装备的各类故障信息。</comment>
+</table>
+<table x="119" y="706" name="FRSS_FACTORY_INFO">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>工业部门的编号，主键，可以根据编号在装备信息表中查找已出厂装备型号</comment>
+</row>
+<row name="NAME" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>工厂名称</comment>
+</row>
+<row name="ADDRESS" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>工厂地址</comment>
+</row>
+<row name="CODE" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>工厂代号</comment>
+</row>
+<row name="RANGE" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>生产范围</comment>
+</row>
+<row name="GUARANTEE" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>编配部队名称</comment>
+</row>
+<row name="GUARDADDRESS" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>编配部队地址</comment>
+</row>
+<row name="ABILITY" null="0" autoincrement="0">
+<datatype>CHAR(1)</datatype>
+<default>'1'</default><comment>部队修理能力，目前暂分1～5级，从低到高，默认为1.</comment>
+</row>
+<row name="CONTACT" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>部队联系人姓名</comment>
+</row>
+<row name="CONTACTWAY" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>部队联系人联系方式</comment>
+</row>
+<row name="MACHINIST" null="1" autoincrement="0">
+<datatype>VARCHAR2(32)</datatype>
+<default>NULL</default><comment>维修人员姓名</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>工业部门信息表，记录工业部门的相关信息。</comment>
+</table>
+<table x="119" y="1226" name="FRSS_MACHINIST_INFO">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>维修师的编号</comment>
+</row>
+<row name="NAME" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>维修人员姓名</comment>
+</row>
+<row name="CONTACTWAY" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>维修人员联系方式</comment>
+</row>
+<row name="EMAIL" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>维修人员的EMAIL地址</comment>
+</row>
+<row name="ID_FRSS_FACTORY_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<comment>工业部门的编号，主键，可以根据编号在装备信息表中查找已出厂装备型号</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>维修人员信息表，记录工业部门中维修人员的相关信息</comment>
+</table>
+<table x="831" y="877" name="FRSS_REPAIR_FEEDBACK">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>装备故障维修信息单号</comment>
+</row>
+<row name="ID_FRSS_FAULT_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<comment>故障编号，也可以当作是故障维修申请单号</comment>
+</row>
+<row name="REPAIRWAY" null="0" autoincrement="0">
+<datatype>CHAR(1)</datatype>
+<default>'1'</default><comment>维修方式，1表示现场维修，2表示专家远程支持，3表示现场维修和远程支持都采用了，0表示没有使用任何维修方式。默认为0</comment>
+</row>
+<row name="REPAIRDISP" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>维修内容，记录维修的一些描述信息。</comment>
+</row>
+<row name="RESULTS" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>维修结果</comment>
+</row>
+<row name="REPAIRTIME" null="0" autoincrement="0">
+<datatype>DATE</datatype>
+<comment>维修时间</comment>
+</row>
+<row name="QUALITY" null="0" autoincrement="0">
+<datatype>CHAR(1)</datatype>
+<default>'1'</default><comment>维修质量，目前划分1～5级，分别表示非常满意、满意、一般、不满意、非常不满意，默认为1.</comment>
+</row>
+<row name="FAULTDISPATCH" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>故障派修</comment>
+</row>
+<row name="BACKSOURCE" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>备件来源情况</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>装备故障维修反馈表，记录装备故障维修反馈的相关信息。</comment>
+</table>
+<table x="1146" y="1032" name="FRSS_REMOTE_SUPPORT">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>装备维修远程支援信息单号，主键</comment>
+</row>
+<row name="SUPPORTYPE" null="0" autoincrement="0">
+<datatype>CHAR(1)</datatype>
+<comment>未定</comment>
+</row>
+<row name="CHANNEL" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>远程支援通道</comment>
+</row>
+<row name="ID_FRSS_REPAIR_FEEDBACK" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<comment>装备故障维修信息单号</comment>
+</row>
+<row name="ID_FRSS_EXPERT_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<comment>专家的编号</comment>
+</row>
+<row name="ID_FRSS_FAULT_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<comment>故障编号，也可以当作是故障维修申请单号</comment>
+</row>
+<row name="DEPARTMENT" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>受远程支援的单位</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>装备维修远程支援信息表，记录远程支援的相关信息。</comment>
+</table>
+<table x="517" y="1075" name="FRSS_REPAIR_DISPATCH">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>装备故障维修派遣单号，主键</comment>
+</row>
+<row name="ID_FRSS_FAULT_INFO" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<relation table="FRSS_FAULT_INFO" row="ID" />
+<comment>故障编号，也可以当作是故障维修申请单号</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>装备故障维修派遣信息表，记录故障维修派遣的相关信息。</comment>
+</table>
+<table x="1211" y="308" name="FRSS_USER_INFO">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>用户编号</comment>
+</row>
+<row name="USERNAME" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>用户名，登录系统的用户名</comment>
+</row>
+<row name="MD5PASSWORD" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>用户名登录密码的MD5值</comment>
+</row>
+<row name="USERTYPE" null="0" autoincrement="0">
+<datatype>CHAR</datatype>
+<comment>用户的类型，主要包括：军区用户、集团军用户、团级用户、维修中心用户、专家、作业人员和超级管理员,代码分别为6～0，默认为1(作业人员) 超级管理员最好采用系统默认注入记录，而不要在系统中提供设置界面。而各级用户只有对自己的下属用户进行管理。</comment>
+</row>
+<row name="SUBTYPE" null="0" autoincrement="0">
+<datatype>CHAR</datatype>
+<default>'0'</default><comment>用户的下级用户类型，6～0之间，默认为0(表示没有下级用户).</comment>
+</row>
+<row name="DESCRIPTION" null="1" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<default>NULL</default><comment>用户的简要描述。</comment>
+</row>
+<row name="DEPARTMENT" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>用户所属部门。</comment>
+</row>
+<row name="CREATEMAN" null="1" autoincrement="0">
+<datatype>VARCHAR2</datatype>
+<default>NULL</default><comment>用户的创建人。</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>用户信息表，记录系统所有用户的信息。</comment>
+</table>
+<table x="1535" y="552" name="FRSS_AUDIO_INFO">
+<row name="ID" null="0" autoincrement="0">
+<datatype>DECIMAL</datatype>
+<comment>语音记录编号，用当前时间字符串当作编号。</comment>
+</row>
+<row name="STARTIME" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<comment>语音开始时间</comment>
+</row>
+<row name="ENDTIME" null="0" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<comment>语音结束时间</comment>
+</row>
+<row name="PATH" null="0" autoincrement="0">
+<datatype>VARCHAR2(256)</datatype>
+<comment>语音保存路径</comment>
+</row>
+<row name="TYPE" null="0" autoincrement="0">
+<datatype>CHAR(1)</datatype>
+<comment>语音类别，0表示故障语音上报、1表示专家远程协助。</comment>
+</row>
+<row name="KEYID" null="0" autoincrement="0">
+<datatype>DECIMAL(20)</datatype>
+<relation table="FRSS_USER_INFO" row="ID" />
+<comment>FRSS_APPROVAL_INFO或者FRSS_EXPERT_INFO中的ID编号</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>语音通话记录信息表，记录系统中所有的通话记录信息。</comment>
+</table>
+<table x="1432" y="899" name="FRSS_ERPERT_PROFESSION">
+<row name="ID" null="0" autoincrement="1">
+<datatype>DECIMAL(20)</datatype>
+<comment>专业编号</comment>
+</row>
+<row name="PROFESSION" null="0" autoincrement="0">
+<datatype>VARCHAR2(32)</datatype>
+<comment>专业名称</comment>
+</row>
+<key type="PRIMARY" name="">
+<part>ID</part>
+</key>
+<comment>专家擅长专业信息表</comment>
+</table>
+</sql>

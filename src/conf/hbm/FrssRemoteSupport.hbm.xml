@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.frss.model.mapping.FrssRemoteSupport" table="FRSS_REMOTE_SUPPORT">
+        <id name="id" type="long">
+        	<column name="ID" precision="20" scale="0" />
+            <generator class="sequence"><param name="sequence">SEQ_FRSS_REMOTE_SUPPORT</param></generator>
+        </id> 
+        <property name="supportType" type="java.lang.String">
+            <column name="SUPPORTYPE" length="256" />
+        </property>
+        <property name="channel" type="java.lang.String">
+            <column name="CHANNEL" length="256" />
+        </property>  
+        <property name="department" type="java.lang.String">
+            <column name="DEPARTMENT" length="256" />
+        </property>  
+        <property name="faultId" type="long">
+            <column name="FAULTID" precision="20" scale="0" />
+        </property>              
+        <property name="expertId" type="long">
+            <column name="EXPERTID" precision="20" scale="0" />
+        </property>        
+        <property name="feedbackId" type="long">
+            <column name="FEEDBACKID" precision="20" scale="0" />
+        </property>        
+	</class>
+</hibernate-mapping>	

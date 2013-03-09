@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-1-5 23:46:06 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.frss.model.mapping.FrssApprovalInfo" table="FRSS_APPROVAL_INFO">
+        <id name="id" type="long">
+        	<column name="ID" precision="20" scale="0" />
+            <generator class="sequence"><param name="sequence">SEQ_FRSS_APPROVAL_INFO</param></generator>
+        </id>       
+        <property name="checker" type="java.lang.String">
+            <column name="CHECKER" length="64" />
+        </property>
+        <property name="opinion" type="java.lang.String">
+            <column name="OPINION" length="256" />
+        </property>        
+        <property name="checkTime" type="java.util.Date">
+            <column name="CHECKTIME" />
+        </property>
+        <property name="type" type="int">
+            <column name="TYPE" precision="1" scale="0" not-null="true" />
+        </property>        
+        <property name="status" type="int">
+            <column name="STATUS" precision="1" scale="0" not-null="true" />
+        </property>        
+        <property name="keyId" type="long">
+            <column name="KEYID" precision="20" scale="0" />
+        </property>        
+        <property name="userId" type="long">
+            <column name="USERID" precision="20" scale="0" />
+        </property>        
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+{
+	// 内容
+	items : [ {
+		id: 1, //序号
+		name: 'Dijit Tree API', //显示文字
+		url: 'http://dojotoolkit.org/api/1.6/dijit.Tree', //链接
+		root: true, //是否为根
+		children: [ { //如果是根，其孩子
+			_reference:2 //孩子的序号
+		}, {
+			_reference:3
+		}, {
+			_reference:4
+		} ] 
+	}, { 
+		id: 2, 
+		name: 'Dijit Tree.model API', 
+		url: 'http://dojotoolkit.org/api/1.6/dijit.Tree.model', 
+		parent: 1 //其父
+	}, { 
+		id: 3, 
+		name: 'Dijit Tree.ForestStoreModel API', 
+		url: 'http://dojotoolkit.org/api/1.6/dijit.tree.ForestStoreModel', 
+		parent: 1 
+	}, { 
+		id: 4, 
+		name: 'Dijit Tree.TreeStoreModel API', 
+		url: 'http://dojotoolkit.org/api/1.6/dijit.tree.TreeStoreModel', 
+		parent: 1 
+	}, { 
+		id: 5, 
+		name: 'Dojox Grid API', 
+		url: 'http://dojotoolkit.org/api/1.6/dojox/grid/DataGrid', 
+		root: true 
+	}, ],
+	identifier : 'id', //大概是索引吧..
+	label : 'name' //显示的字段
+}

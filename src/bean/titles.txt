@@ -1,0 +1,166 @@
+Purchaser
+Cashier
+Computer Engineer
+Senior Engineer
+Designer
+Mechanic
+Adviser Consultant
+Interpreter
+Technical Translator
+Translator
+Quality Inspector
+Office Controller
+Technician
+Manufacturing Engineer
+Manufacturing Worker
+Technical Worker
+Planning Manager
+Deputy Planning Manager
+Engineering Manager
+Administrative Assistant
+Procurement Charge
+Network Maintenance
+Charge
+Members Of Acceptance
+Custodians
+Qa Quality Assurance
+Brand Executive Manager
+Technical Representative
+Technology Research And Development Senior Manager
+Technology
+Marketing Manager
+National Marketing
+Accounting Assistant
+Accounting Clerk
+Accounting Manager
+Accounting Stall
+Accounting Supervisor
+Administration Manager
+Administration Staff
+Administrative Assistant
+Administrative Clerk
+Advertising Staff
+Airlines Sales Representative
+Airlines Staff
+Application Engineer
+Assistant Manager
+Bond Analyst
+Bond Trader
+Business Controller
+Business Manager
+Buyer
+Cashier
+Chemical Engineer
+Civil Engineer
+Clerk/Receptionist
+Clerk Typist & Secretary
+Computer Data Input Operator
+Computer Engineer
+Computer Processing Operator
+Computer System Manager
+Copywriter
+Deputy General Manager
+Economic Research Assistant
+Electrical Engineer
+Engineering Technician
+English Instructor/Teacher
+Export Sales Manager
+Export Sales Staff
+Financial Controller
+Financial Reporter
+F.X. (Foreign Exchange) Clerk
+F.X. Settlement Clerk
+Fund Manager
+General Auditor
+General Manager/President
+General Manager Assistant
+General Manager S Secretary
+Hardware Engineer
+Import Liaison Staff
+Import Manager
+Insurance Actuary
+International Sales Staff
+Interpreter
+Legal Adviser
+Line Supervisor
+Maintenance Engineer
+Management Consultant
+Manager
+Manager For Public Relations
+Manufacturing Engineer
+Manufacturing Worker
+Market Analyst
+Market Development Manager
+Marketing Manager
+Marketing Staff
+Marketing Assistant
+Marketing Executive
+Marketing Representative
+Marketing Representative Manager
+Mechanical Engineer
+Mining Engineer
+Music Teacher
+Naval Architect
+Office Assistant
+Office Clerk
+Operational Manager
+Package Designer
+Passenger Reservation Staff
+Personnel Clerk
+Personnel Manager
+Plant/Factory Manager
+Postal Clerk
+Private Secretary
+Product Manager
+Production Engineer
+Professional Staff
+Programmer
+Project Staff
+Promotional Manager
+Proof- Reader
+Purchasing Agent
+Quality Control Engineer
+Real Estate Staff
+Recruitment Coordinator
+Regional Manger
+Research & Development Engineer
+Restaurant Manager
+Sales And Planning Staff
+Sales Assistant
+Sales Clerk
+Sales Coordinator
+Sales Engineer
+Sales Executive
+Sales Manager
+Salesperson
+Seller Representative
+Sales Supervisor
+School Registrar
+Secretarial Assistant
+Secretary
+Securities Custody Clerk
+Security Officer
+Senior Accountant
+Senior Consultant/Adviser
+Senior Employee
+Senior Secretary
+Service Manager
+Simultaneous Interpreter
+Software Engineer
+Supervisor
+Systems Adviser
+Systems Engineer
+Systems Operator
+Technical Editor
+Technical Translator
+Technical Worker
+Telecommunication Executive
+Telephonist/Operator
+Tourist Guide
+Trade Finance Executive
+Trainee Manager
+Translation Checker
+Translator
+Trust Banking Executive
+Typist
+Word Processing Operator

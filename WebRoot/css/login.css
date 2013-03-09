@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+
+body { margin: 0px; padding: 0px; font-family: verdana; font-size: small; }
+
+TD{font-size: 9pt; color: #CAFFFF}
+.h{font-size: 12pt; color: #CAFFFF}
+.out{border-left:0px solid 0090c0; border-right:0px solid 0070b0; border-top:0px solid 0090c0; border-bottom:0px solid 0070b0; font-size: 9pt; color: #66DDDD;cursor:hand; background:0080c0 0080c0; text-align: center}
+.out2 {text-align: center}
+.in,.out2{font-size: 9pt; color: #66DDDD;background:0078b8 0078b8;cursor:default}
+input {
+	BACKGROUND: url(img/inputend.gif) repeat-x left center; 
+	BORDER-BOTTOM-WIDTH: 0px; 
+/*	WIDTH: 100px;*/ 
+	COLOR: #ff0000; 
+	HEIGHT: 18px; 
+	BORDER-RIGHT-WIDTH: 0px
+}
+.text {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFF;
+	font-family: "微软雅黑";
+}
+.button {
+	width: 50px;
+	height: 24px;
+	font-size: 14px;
+	font-weight: bold;
+	background-image: url(img/buttonbg.gif);
+	background-repeat: repeat-x;
+	border: 1px solid #CAFFFF;
+	color: #FFF;
+	font-family: "微软雅黑";
+}

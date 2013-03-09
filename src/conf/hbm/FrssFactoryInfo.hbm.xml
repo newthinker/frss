@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.frss.model.mapping.FrssFactoryInfo" table="FRSS_FACTORY_INFO">
+    	<id name="id" type="long">
+            <column name="ID" precision="20" scale="0" />
+            <generator class="sequence"><param name="sequence">SEQ_FRSS_FACTORY_INFO</param></generator>
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="32" not-null="true" />
+        </property>    
+        <property name="address" type="java.lang.String">
+        	<column name="ADDRESS" length="256" not-null="true" />
+        </property>    
+        <property name="code" type="java.lang.String">
+        	<column name="CODE" length="256" />
+        </property>
+        <property name="range" type="java.lang.String">
+        	<column name="RANGE" length="256" />
+        </property>
+        <property name="guarantee" type="java.lang.String">
+        	<column name="GUARANTEE" length="256" />
+        </property>
+        <property name="guardAddress" type="java.lang.String">
+        	<column name="GUARDADDRESS" length="256" />
+        </property>
+        <property name="ability" type="int">
+        	<column name="ABILITY" precision="1" scale="0" />
+        </property>
+        <property name="contact" type="java.lang.String">
+        	<column name="CONTACT" length="256" />
+        </property>
+        <property name="contactWay" type="java.lang.String">
+        	<column name="CONTACTWAY" length="256" />
+        </property>
+        <property name="machinist" type="java.lang.String">
+        	<column name="MACHINIST" length="32" />
+        </property>        
+    </class>
+</hibernate-mapping>

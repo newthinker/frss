@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.frss.model.mapping.FrssRepairDispatch" table="FRSS_REPAIR_DISPATCH">
+        <id name="id" type="long">
+        	<column name="ID" precision="20" scale="0" />
+            <generator class="sequence"><param name="sequence">SEQ_FRSS_REPAIR_DISPATCH</param></generator>
+        </id>
+        <property name="faultId" type="long">
+            <column name="FAULTID" precision="20" scale="0" />
+        </property>    
+ 	</class>
+</hibernate-mapping>	

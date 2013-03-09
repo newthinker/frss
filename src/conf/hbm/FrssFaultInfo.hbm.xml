@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.frss.model.mapping.FrssFaultInfo" table="FRSS_FAULT_INFO">
+        <id name="id" type="long">
+        	<column name="ID" precision="20" scale="0" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="amount" type="int">
+            <column name="AMOUNT" precision="5" scale="0" not-null="true" />
+        </property>  
+        <property name="faultDesp" type="java.lang.String">
+        	<column name="FAULTDESP" length="256" />
+        </property>
+        <property name="faultTime" type="java.util.Date">
+            <column name="FAULTTIME" not-null="true"  />
+        </property>  
+        <property name="preProcess" type="java.lang.String">
+            <column name="PREPROCESS" length="256"  />
+        </property>          
+        <property name="frequency" type="int">
+            <column name="FREQUENCY" precision="5" scale="0"  />
+        </property>          
+        <property name="faultPlace" type="java.lang.String">
+            <column name="FAULTPLACE" length="256" not-null="true"  />
+        </property>          
+        <property name="reporter" type="java.lang.String">
+            <column name="REPORTER" length="32" not-null="true" />
+        </property>          
+        <property name="contactWay" type="java.lang.String">
+            <column name="CONTACTWAY" length="256" />
+        </property>          
+        <property name="reportTime" type="java.util.Date">
+            <column name="REPORTTIME" not-null="true"  />
+        </property>          
+        <property name="photoName" type="java.lang.String">
+            <column name="PHOTONAME" length="256" />
+        </property>     
+        <property name="photos" type="blob">
+            <column name="PHOTOS" />
+        </property>      
+        <property name="cause" type="java.lang.String">
+            <column name="CAUSE" length="256" />
+        </property>          
+        <property name="equipId" type="long">
+            <column name="EQUIPID" length="256" />
+        </property>          
+    </class>
+</hibernate-mapping>

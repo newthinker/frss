@@ -1,0 +1,26 @@
+HKCR
+{
+	MATX.MAudioTalk.1 = s 'MAudioTalk Class'
+	{
+		CLSID = s '{8853B3B8-D35F-4131-9967-B41D3214B13D}'
+	}
+	MATX.MAudioTalk = s 'MAudioTalk Class'
+	{
+		CLSID = s '{8853B3B8-D35F-4131-9967-B41D3214B13D}'
+		CurVer = s 'MATX.MAudioTalk.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {8853B3B8-D35F-4131-9967-B41D3214B13D} = s 'MAudioTalk Class'
+		{
+			ProgID = s 'MATX.MAudioTalk.1'
+			VersionIndependentProgID = s 'MATX.MAudioTalk'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{E6BF8DBD-7275-4DF8-A66D-A6D0D633779D}'
+		}
+	}
+}

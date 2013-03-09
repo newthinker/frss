@@ -1,0 +1,53 @@
+// MATX.idl : MATX 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(MATX.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(0F89CA69-1430-49CA-83F7-7B4A26B6103E),
+	dual,
+	nonextensible,
+	helpstring("IMAudioTalk 接口"),
+	pointer_default(unique)
+]
+interface IMAudioTalk : IDispatch{
+	[id(1), helpstring("方法MAudioTalk_Init")] HRESULT MAudioTalk_Init([in] BSTR ip, [in] LONG type, [in] BSTR name, [out,retval] LONG* ret);
+	[id(2), helpstring("方法MAudioTalk_Uninit")] HRESULT MAudioTalk_Uninit([out,retval] LONG* ret);
+	[id(3), helpstring("方法MAudioTalk_Offline")] HRESULT MAudioTalk_Offline([out,retval] LONG* ret);
+	[id(4), helpstring("方法MAudioTalk_Offover")] HRESULT MAudioTalk_Offover([out,retval] LONG* out);
+};
+[
+	uuid(E6BF8DBD-7275-4DF8-A66D-A6D0D633779D),
+	version(1.0),
+	helpstring("MATX 1.0 类型库")
+]
+library MATXLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(7EE43ED0-4E45-4F08-93B5-B51F6AC167F5),
+		helpstring("_IMAudioTalkEvents 接口")
+	]
+	dispinterface _IMAudioTalkEvents
+	{
+		properties:
+		methods:
+			[id(5), helpstring("运行状态回调")]HRESULT GetState([out] LONG* state);
+			[id(6), helpstring("传递字符串回调")]HRESULT GetString([out] BSTR str);
+			[id(7), helpstring("传递字符串回调")]HRESULT GetName([out] BSTR str);
+	};
+	[
+		uuid(8853B3B8-D35F-4131-9967-B41D3214B13D),
+		helpstring("MAudioTalk Class")
+	]
+	coclass MAudioTalk
+	{
+		[default] interface IMAudioTalk;
+		[default, source] dispinterface _IMAudioTalkEvents;
+	};
+};

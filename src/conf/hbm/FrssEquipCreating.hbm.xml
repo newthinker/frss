@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.frss.model.mapping.FrssEquipCreating" table="FRSS_EQUIP_CREATING">
+        <id name="id" type="long">
+        	<column name="ID" precision="20" scale="0" />
+            <generator class="sequence"><param name="sequence">SEQ_FRSS_EQUIP_CREATING</param></generator>
+        </id>
+        <property name="equipType" type="java.lang.String">
+            <column name="EQUIPTYPE" length="256" not-null="true" />
+        </property>   
+        <property name="equipName" type="java.lang.String">
+        	<column name="EQUIPNAME" length="256" not-null="true" />
+        </property>
+        <property name="factoryId" type="long">
+        	<column name="FACTORYID" precision="20" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

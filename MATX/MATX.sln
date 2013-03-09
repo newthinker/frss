@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MATX", "MATX.vcproj", "{CD3622AE-9658-4C81-A77F-4F8175F4A0BF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MATXPS", "MATXPS.vcproj", "{7B173233-2E55-4997-AE26-211721DCCDE2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD3622AE-9658-4C81-A77F-4F8175F4A0BF} = {CD3622AE-9658-4C81-A77F-4F8175F4A0BF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD3622AE-9658-4C81-A77F-4F8175F4A0BF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CD3622AE-9658-4C81-A77F-4F8175F4A0BF}.Debug|Win32.Build.0 = Debug|Win32
+		{CD3622AE-9658-4C81-A77F-4F8175F4A0BF}.Release|Win32.ActiveCfg = Release|Win32
+		{CD3622AE-9658-4C81-A77F-4F8175F4A0BF}.Release|Win32.Build.0 = Release|Win32
+		{7B173233-2E55-4997-AE26-211721DCCDE2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B173233-2E55-4997-AE26-211721DCCDE2}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

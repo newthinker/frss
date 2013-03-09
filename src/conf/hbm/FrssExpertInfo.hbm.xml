@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.frss.model.mapping.FrssExpertInfo" table="FRSS_EXPERT_INFO">
+        <id name="id" type="long">
+        	<column name="ID" precision="20" scale="0" />
+            <generator class="sequence"><param name="sequence">SEQ_FRSS_EXPERT_INFO</param></generator>
+        </id>     
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="32" not-null="true" />
+        </property>
+        <property name="department" type="java.lang.String">
+            <column name="DEPARTMENT" length="64" />
+        </property>        
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" length="64" />
+        </property>        
+        <property name="contact" type="java.lang.String">
+            <column name="CONTACT" length="32" not-null="true" />
+        </property>        
+        <property name="contactWay" type="java.lang.String">
+            <column name="CONTACTWAY" length="256" not-null="true" />
+        </property>        
+        <set name="professions" table="PROFESSIONS">
+            <key column="ID" />
+            <element type="java.lang.String" column="PROFESSION" not-null="true" />
+        </set>   
+        <property name="userId" type="long">
+            <column name="USERID" precision="20" scale="0" />
+        </property> 
+    </class>
+</hibernate-mapping>       
